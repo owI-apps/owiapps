@@ -1,13 +1,14 @@
-/* Owi Apps Hub - Modern Professional UI */
+/* Owi Apps Hub - Premium Modern UI (Fixed Logos) */
 :root {
-    --bg-color: #0B0F19; /* Abu sangat gelap/hitam kebiruan */
-    --surface-color: #151A2D; /* Warna latar kartu */
+    --bg-color: #09090b;
+    --surface-color: #121217;
     --border-color: rgba(255, 255, 255, 0.06);
-    --primary-color: #6C63FF; /* Ungu/Indigo modern sebagai aksen */
+    --primary-color: #6C63FF;
+    --primary-hover: #5A52E0;
     --primary-glow: rgba(108, 99, 255, 0.15);
     --text-main: #FFFFFF;
-    --text-muted: #8892B0; /* Abu-abu lembut untuk teks sekunder */
-    --font-main: 'Inter', sans-serif;
+    --text-muted: #94a3b8;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
 }
 
 * {
@@ -22,10 +23,11 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -35,12 +37,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 0;
+    padding: 24px 0;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    width: 32px; /* Ukuran pas di navbar */
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek eye-catching saat hover di navbar */
+.logo-container:hover .nav-logo {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
     letter-spacing: -0.5px;
     color: var(--text-main);
 }
@@ -49,7 +71,13 @@ body {
     color: var(--primary-color);
 }
 
-.nav-link {
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-links a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 0.9rem;
@@ -57,49 +85,127 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-links a:hover {
     color: var(--text-main);
 }
 
 /* Hero */
 .hero {
     text-align: center;
-    padding: 60px 0 80px;
+    padding: 100px 0 80px;
+    position: relative;
+}
+
+.hero-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.1;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
     margin-bottom: 24px;
-    background: linear-gradient(135deg, #FFFFFF 0%, #8892B0 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #94a3b8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 550px;
+    margin: 0 auto 40px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px var(--primary-glow);
+}
+
+.btn-hero:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+}
+
+/* Features Section */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.feature-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 /* Apps Section */
 .section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--text-muted);
     margin-bottom: 32px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .app-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 80px;
+    gap: 32px;
+    margin-bottom: 100px;
 }
 
 @media (min-width: 768px) {
@@ -108,73 +214,91 @@ body {
     }
 }
 
-/* App Card (Glassmorphism style) */
+/* App Card */
 .app-card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 32px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    padding: 36px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px var(--primary-glow);
-    border-color: rgba(108, 99, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(108, 99, 255, 0.4);
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
-.app-icon {
-    font-size: 2rem;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* --- PERBAIKAN LOGO APLIKASI (EYE-CATCHING) --- */
+.app-logo {
+    width: 56px; /* Ukuran ideal agar tidak terlalu besar tapi tetap mencolok */
+    height: 56px;
+    border-radius: 14px; /* Sudut membulat modern */
+    object-fit: cover;
+    background-color: #000000; /* Latar hitam agar logo berwarna terang menonjol */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi halus */
+    /* Efek bayangan mendalam (depth) */
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(108, 99, 255, 0.1); /* Glow ungu samar */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Animasi bouncing */
 }
+
+/* Animasi saat kartu di-hover, logo akan membesar sedikit dan glow-nya menguat */
+.app-card:hover .app-logo {
+    transform: scale(1.15) rotate(-3deg); /* Sedikit membesar dan miring */
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(108, 99, 255, 0.3); /* Glow lebih terang */
+}
+/* ---------------------------------------------- */
 
 .app-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     color: var(--primary-color);
     background: var(--primary-glow);
-    padding: 4px 8px;
+    padding: 6px 10px;
     border-radius: 6px;
+    letter-spacing: 0.5px;
 }
 
 .app-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .app-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    line-height: 1.6;
     min-height: 50px;
 }
 
-/* Buttons */
 .btn-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, gap 0.3s ease;
+    gap: 8px;
 }
 
 .btn-primary:hover {
     color: #FFFFFF;
+    gap: 12px;
 }
 
 /* Support Section */
@@ -183,45 +307,101 @@ body {
 }
 
 .support-card {
-    background: linear-gradient(135deg, var(--primary-glow), var(--surface-color));
+    background: linear-gradient(135deg, var(--surface-color), rgba(108, 99, 255, 0.05));
     border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 48px;
+    border-radius: 20px;
+    padding: 60px 40px;
     text-align: center;
 }
 
 .support-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
 }
 
 .support-card p {
     color: var(--text-muted);
     margin-bottom: 32px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-secondary {
     display: inline-block;
-    background-color: var(--primary-color);
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
-    font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background-color: #5A52E0;
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 40px 0;
     border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.footer-logo {
+    width: 24px; /* Ukuran kecil elegan di footer */
+    height: 24px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.footer-left p {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+}
+
+.footer-right a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .footer-right {
+        text-align: left;
+    }
 }
