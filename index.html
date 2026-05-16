@@ -3,52 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owi Apps - Modern Digital Ecosystem</title>
+    <title>Owi Apps - Lightweight Digital Ecosystem</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Menggunakan font Inter untuk kesan modern dan profesional -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- Navbar -->
         <nav class="navbar">
-            <div class="logo">owi<span class="logo-dot">.</span>apps</div>
-            <a href="mailto:owi.aplikasi@gmail.com" class="nav-link">Contact</a>
+            <div class="logo-container">
+                <img src="logo owi.png" alt="Owi Apps Logo" class="nav-logo">
+                <span class="logo-text">owi<span class="logo-dot">.</span>apps</span>
+            </div>
+            <div class="nav-links">
+                <a href="#apps">Applications</a>
+                <a href="https://www.instagram.com/owi.apps/" target="_blank">Instagram</a>
+                <a href="mailto:owi.aplikasi@gmail.com">Contact</a>
+            </div>
         </nav>
 
         <!-- Hero Section -->
         <header class="hero">
-            <h1>Digital Ecosystem<br>Built for Efficiency</h1>
-            <p class="subtitle">Lightweight PWA applications designed with precision. One ecosystem, seamless experience.</p>
+            <div class="hero-glow"></div>
+            <h1>Build Your Digital Life<br>With Lightweight Ecosystem</h1>
+            <p class="subtitle">Experience the future of web applications. No heavy installs, no app store barriers. Just fast, beautiful, and offline-ready PWA directly on your device.</p>
+            <a href="#apps" class="btn-hero">Explore Ecosystem ↓</a>
         </header>
 
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightweight</h3>
+                <p>Built with Vanilla JS. No heavy frameworks, ensuring ultra-fast load times and minimal storage usage.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>Offline-Ready PWA</h3>
+                <p>Install directly from the browser. Works seamlessly even without an internet connection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Modern Retro UI</h3>
+                <p>A unique blend of cutting-edge modern design with stylish retro aesthetics for the best user experience.</p>
+            </div>
+        </section>
+
         <!-- Apps Section -->
-        <main class="apps-section">
+        <main class="apps-section" id="apps">
             <h2 class="section-title">Our Applications</h2>
             <div class="app-grid">
                 
-                <!-- Aplikasi 1 -->
+                <!-- Aplikasi 1: PrayTrack -->
                 <div class="app-card">
                     <div class="card-header">
-                        <div class="app-icon">🧭</div>
+                        <img src="logo praytrack.png" alt="Owi-PrayTrack Logo" class="app-logo">
                         <span class="app-badge">PWA</span>
                     </div>
                     <h3>Owi-PrayTrack</h3>
-                    <p>Precision prayer tracker with a clean and intuitive interface. Stay consistent, stay focused.</p>
-                    <a href="#" class="btn-primary">Launch App →</a>
+                    <p>A precision prayer tracker designed to help you stay consistent with your daily spiritual habits. Clean interface, zero distractions.</p>
+                    <a href="https://owi-apps.github.io/owI-PrayTrack/demo.html" target="_blank" class="btn-primary">Launch App →</a>
                 </div>
 
-                <!-- Aplikasi 2 -->
+                <!-- Aplikasi 2: FinTrack -->
                 <div class="app-card">
                     <div class="card-header">
-                        <div class="app-icon">📈</div>
+                        <img src="logo fintrack.png" alt="Owi-FinTrack Logo" class="app-logo">
                         <span class="app-badge">PWA</span>
                     </div>
                     <h3>Owi-FinTrack</h3>
-                    <p>Smart financial tracking to manage your cash flow. Simple, powerful, and offline-ready.</p>
-                    <a href="#" class="btn-primary">Launch App →</a>
+                    <p>Smart financial tracking to manage your cash flow effortlessly. Understand where your money goes with intuitive reporting.</p>
+                    <a href="https://owi-apps.github.io/Owi-Fintrack/demo.html" target="_blank" class="btn-primary">Launch App →</a>
                 </div>
 
             </div>
@@ -58,14 +85,26 @@
         <section class="support-section">
             <div class="support-card">
                 <h3>Support Our Mission</h3>
-                <p>Owi Apps is built indie-first. Help us maintain the server and build more apps.</p>
+                <p>Owi Apps is crafted independently by passionate developers. Help us keep the servers running and build more amazing apps for the ecosystem.</p>
                 <a href="https://trakteer.id/owi_apps" target="_blank" class="btn-secondary">Support on Trakteer ❤️</a>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2024 Owi Apps. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="logo owi.png" alt="Owi Apps Logo" class="footer-logo">
+                    <p>Crafting lightweight digital solutions.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="mailto:owi.aplikasi@gmail.com">owi.aplikasi@gmail.com</a>
+                    <a href="https://www.instagram.com/owi.apps/" target="_blank">Instagram @owi.apps</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Owi Apps. All rights reserved.
+            </div>
         </footer>
     </div>
 </body>
